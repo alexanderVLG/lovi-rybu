@@ -1,0 +1,15 @@
+.layout__container {
+  margin: 0 auto;
+  width: calc(100% - 20px);
+
+  @media (min-width: 1440px) {
+    max-width: 1400px;
+  }
+
+  
+}
+
+.nav__list {
+  display: flex;
+  
+}

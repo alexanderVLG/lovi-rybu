@@ -1,9 +1,19 @@
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
+
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    title: "Блог о рыбалке",
+    description: "Блог о рыбалке. Рыбалка на фидер."
   },
-  plugins: [],
+  plugins: [
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `blog`,
+        path: `${__dirname}/blog`,
+      }
+    },
+  ],
 }

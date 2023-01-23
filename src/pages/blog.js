@@ -1,16 +1,34 @@
 import React from "react";
 import { Link } from "gatsby";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import Seo from "../components/seo";
 
-const BlogPage = () => {
+const BlogPage = ({data}) => {
   return (
-    <main>
-      <h2>Блог</h2>
-      <p>Страница для статей</p>
-      <Link to="/">Обратно на главную</Link>
-    </main>
+    <Layout pageTitle="Блог">
+      <ul>
+        {data.allFile.nodes.map((node) => (
+          <li key={node.name}>
+            {node.name}
+          </li>
+        ))}
+      </ul>
+      <Link to="/">на главную</Link>
+    </Layout>
   )
 }
 
-export const Head = () => <title>Статьи о рыбалке</title>
+export const query = graphql`
+  query {
+    allFile {
+      nodes {
+        name
+      }
+    }
+  }
+`
+
+export const Head = () => (<Seo pageTitle="Блог"/>)
 
 export default BlogPage;
