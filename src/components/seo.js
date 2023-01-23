@@ -1,12 +1,12 @@
 import React from "react";
 import useSiteMetadata from "../hooks/use-siteMetadata";
 
-const Seo = ({pageTitle}) => {
+const Seo = () => {
   const {title, description} = useSiteMetadata();
   
   return (
     <>
-      <title>{pageTitle} | {title}</title>
+      <title>{title}</title>
       <meta name="description" content={description} />
     </>
   )
