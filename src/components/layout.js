@@ -1,23 +1,18 @@
 import React from "react";
-import { Link } from "gatsby";
+import {Box, Container} from '@chakra-ui/react';
+import Header from "./header";
 
 const Layout = ({pageTitle, children}) => {
 
   return (
     <>
-      <div className="layout__container">
-        <nav>
-          <ul className="nav__list">
-            <li><Link to="/">Главная</Link></li>
-            <li><Link to="/blog">Блог</Link></li>
-            <li><Link to="/review">Обзоры</Link></li>
-          </ul>
-        </nav>
-        <main>
+      <Header />
+      <Container maxW='container.xl'>
+        <Box as="main">
           <h1>{pageTitle}</h1>
           {children}
-        </main>
-      </div>
+        </Box>
+      </Container>
     </>
   )
 }

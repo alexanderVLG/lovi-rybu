@@ -9,6 +9,8 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-mdx`,
+    `gatsby-plugin-emotion`,
+
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -16,6 +18,14 @@ module.exports = {
         path: `${__dirname}/blog`,
       }
     },
-    "gatsby-transformer-sharp",
+    `gatsby-transformer-sharp`,
+    {
+      resolve: '@chakra-ui/gatsby-plugin',
+      options: {
+        resetCSS: true,
+        isUsingColorMode: true,
+        isBaseProvider: false,
+      },
+    }, 
   ],
 }
