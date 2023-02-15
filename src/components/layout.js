@@ -1,19 +1,22 @@
 import React from "react";
-import {Box, Container} from '@chakra-ui/react';
+import {Box, Flex, Container, Heading, Divider} from '@chakra-ui/react';
 import Header from "./header";
+import Footer from "./footer";
 
 const Layout = ({pageTitle, children}) => {
 
   return (
-    <>
+    <Box pos='relative'>
       <Header />
       <Container maxW='container.xl'>
         <Box as="main">
-          <h1>{pageTitle}</h1>
+          <Heading my={5} as='h1'>{pageTitle}</Heading>
+          <Divider />
           {children}
         </Box>
       </Container>
-    </>
+      <Footer />
+    </Box>
   )
 }
 

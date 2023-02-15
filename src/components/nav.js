@@ -21,7 +21,6 @@ const Nav = () => {
         >
           <ListItem><Link to="/">Главная</Link></ListItem>
           <ListItem ml="20px"><Link to="/blog">Блог</Link></ListItem>
-          <ListItem ml="20px"><Link to="/review">Обзоры</Link></ListItem>
         </List>
       </Flex>
     </Box>
